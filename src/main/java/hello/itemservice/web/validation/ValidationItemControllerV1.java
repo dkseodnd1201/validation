@@ -74,7 +74,8 @@ public class ValidationItemControllerV1 {
             return "validation/v1/addForm";
         }
 
-       Item savedItem = itemRepository.save(item);
+        //성공 로직
+        Item savedItem = itemRepository.save(item);
         redirectAttributes.addAttribute("itemId", savedItem.getId());
         redirectAttributes.addAttribute("status", true);
         return "redirect:/validation/v1/items/{itemId}";
